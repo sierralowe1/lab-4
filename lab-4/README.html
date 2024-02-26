@@ -1,0 +1,134 @@
+READ ME FILE
+Lab Practice: Control Flow in JavaScript
+
+
+Instructions
+Use your favorite text editor for writing the answers to each of the problems below using JavaScript. Copy and paste the JavaScript and HTML code corresponding to all your answers in two text files and submit the text files to Canvas. 
+Use these CSS rules for all problems:
+label, input, button, textarea {
+  margin: 5px;
+}
+.large {
+  width: 200px;
+}
+textarea {
+  width: 300px;
+  height: 100px;
+}
+.center { 
+   text-align: center;
+}
+#rabbit-couple {
+  width: 50px;
+}
+GST Calculator
+The Goods and Services Tax (GST) is a tax for goods and services applied to the final price of a purchase.
+Businesses usually pay GST only on the difference between GST-liable sales and GST-liable supplies (i.e., they pay GST on the difference between what they sell and what they buy). This is accomplished by reconciling GST received (through sales) and GST paid (through purchases) at regular periods. Therefore, businesses need to calculate how much GST is included in the price of the supplies acquired to carry on the business.
+Create an application that calculates the amount of GST in a price that already includes GST ( GST inclusive price).
+Complete the JavaScript code below using the provided HTML.
+HTML:
+<label for="priceIncGST">Enter amount with GST included:</label>
+$<input type="number" id="priceIncGST">
+<button onclick="calculateGST()">Calculate GST</button><br>
+<label>GST: </label>
+<input type="text" id="gst" disabled><br>
+JavaScript:
+const GST_RATE = 0.15;
+function calculateGST() { }
+Considerations
+Use the toFixed function for formatting a number using fixed-point notation.
+Use the following formula to calculate the gst value:
+GST = Price inclusive GST - (Price inclusive GST / (GST RATE + 1))
+
+Example:
+
+
+
+
+Body Mass Index Calculator
+Create an application that asks the user the height and then the weight of a person. Your application should assess the body mass index (BMI) category according to the following rules:
+BMI Category
+Criteria
+Underweight
+BMI of 18.5 or less
+Normal weight
+BMI between 18.6 and 24.9
+Overweight
+BMI between 25 and 29.9
+Obesity
+BMI of 30 or greater
+
+
+Considerations
+Use this site to learn how BMI is calculated 
+Complete the JavaScript code below using the provided HTML. Change the HTML interface as necessary to reflect your design for the units of the input values.
+You application should display the BMI category to the user
+HTML:
+<label for="height">Enter height: </label>
+<input type="number" id="height"><br>
+<label for="weight">Enter weight: </label>
+<input type="number" id="weight">
+<button onclick="calculateBMI()">Calculate BMI</button><br>
+BMI is: <input class="large" type="text" id="bmi" disabled><br>
+JavaScript:
+const UNDERWEIGHT = 18.5;
+const NORMAL = 25;
+const OVERWEIGHT = 30;
+
+function calculateBMI() { }
+
+Example:
+
+The Largest Number
+Create an application that generates 100 random integer numbers using only iteration and conditional statements. The range for each integer should be between 0 and 1000. Your application should display the largest number to the HTML interface.  
+Complete the JavaScript code below using the provided HTML.
+HTML:
+<button onclick="generateRandom()">Generate random numbers</button><br>
+The largest number is: <input type="number" id="random" disabled><br>
+JavaScript:
+const NUM_RANDOM = 100;
+const LIMIT = 1000;
+function generateRandom() { }
+Example:
+
+Data Simulation
+Create an application that uses only iteration and conditional statements to generate random data for a study on income. Generate random data for 100 people consisting of a random number between $10,000 and $60,000 for each person.
+The HTML interface should display to the user the average income, the lowest income, and the largest income.
+Complete the JavaScript code below using the provided HTML.
+HTML:
+<button onclick="runSimulation()">Run simulation</button><br>
+Largest income: <input type="text" id="max" disabled><br>
+Lowest income: <input type="text" id="min" disabled><br>
+Average income: <input type="text" id="average" disabled><br>
+JavaScript:
+const SIMULATION_INSTANCES = 100;
+const MIN_VALUE = 10000;
+const MAX_VALUE = 60000;
+
+function runSimulation() { }
+Example:
+
+Fibonacci's Rabbits (Just for fun!)
+The Fibonacci sequence is one of the most famous series in mathematics, where
+Each number in the sequence is the sum of the two numbers that precede it starting from 0 and 1
+So, the sequence goes: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, and so on.
+The original problem that Fibonacci investigated (in the year 1202) was about how fast rabbits could breed in ideal circumstances:
+Suppose a newly-born pair of rabbits, one male, one female, are put in a field. Rabbits are able to mate at the age of one month so that at the end of its second month a female can produce another pair of rabbits. Suppose that our rabbits never die and that the female always produces one new pair (one male, one female) every month from the second month on. The puzzle that Fibonacci posed was:
+How many pairs will there be after a number of months?
+Create an application that displays the number of rabbits born in each month up to a month specified by the user. Skip the first two terms of the series and assume the first month starts at the third term in the sequence (i.e., 1, 2, 3, 5, …).
+HTML: 
+<label for="height">Enter the number of months:</label>
+<input type="number" id="months"><button onclick="generateRabbits()">Generate rabbits!</button><br>
+<div class="center">
+  <img id="rabbit-couple" src="https://josecarlosgt.github.io/resources/rabbit-couple.jpeg">
+</div>
+<div id="rabbits" class="center"></div>
+
+
+
+JavaScript: 
+function generateRabbits() {
+	const RABBIT_IMG = "<img src='https://img.icons8.com/ios-glyphs/30/000000/rabbit.png'/>";
+	document.querySelector("#rabbits").innerHTML = RABBIT_IMG;
+}
+
